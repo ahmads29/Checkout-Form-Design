@@ -1,0 +1,77 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.devzur_container {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+}
+
+.devzur_form-group {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.devzur_form-group input[type="text"],
+.devzur_form-group input[type="email"],
+.devzur_form-group input[type="tel"],
+.devzur_form-group select {
+    flex: 2;
+    padding: 15px;
+    border: 1px solid #666666;
+    border-radius: 12px;
+    box-sizing: border-box;
+}
+
+.devzur_form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    resize: none;
+}
+
+.devzur_form-group input[type="checkbox"],
+.devzur_form-group input[type="radio"] {
+    margin-left: 5px;
+    vertical-align: middle;
+}
+
+.devzur_form-group input[type="submit"] {
+    background-color: #bda67f;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.devzur_form-group input[type="submit"]:hover {
+    background-color: #7e6f55;
+}
+
+.devzur_inline-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+.devzur_inline-group .devzur_form-group {
+    width: 48%;
+    flex-direction: column;
+}
+
+.devzur_hidden {
+    display: none;
+}
+
+#devzur_firstName,
+#devzur_lastName {
+    width: 100%;
+}
