@@ -8,91 +8,121 @@
 
 </head>
 <body>
-    <div class="devzur_container">
-        <h2>Checkout Billing Details</h2>
-        <form action="/submit-billing-details" method="post">
 
-            <!-- Contact Information -->
-            <h3>1. Contact Information</h3>
-            <p>We'll use this email to send you details and updates about your order.</p>
-            <div class="devzur_form-group">
-                <input type="email" id="devzur_email" name="email" placeholder="Email" required>
-            </div>
-            <div class="devzur_form-group">
-                <input type="tel" id="devzur_phone" name="phone" placeholder="Phone Number" required>
-            </div>
-
-            <!-- Shipping Address -->
-            <h3>2. Shipping Address</h3>
-            <p>Enter the address where you want your order delivered.</p>
-            <div class="devzur_inline-group">
+    <div class="devzur_main-container">
+        <div class="devzur_container">
+            <h2>Checkout Billing Details</h2>
+            <form action="/submit-billing-details" method="post">
+    
+                <!-- Contact Information -->
+                <h3>1. Contact Information</h3>
+                <p>We'll use this email to send you details and updates about your order.</p>
                 <div class="devzur_form-group">
-                    <input type="text" id="devzur_firstName" name="firstName" placeholder="First Name" required>
+                    <input type="email" id="devzur_email" name="email" placeholder="Email" required>
                 </div>
                 <div class="devzur_form-group">
-                    <input type="text" id="devzur_lastName" name="lastName" placeholder="Last Name" required>
+                    <input type="tel" id="devzur_phone" name="phone" placeholder="Phone Number" required>
+                </div>
+    
+                <!-- Shipping Address -->
+                <h3>2. Shipping Address</h3>
+                <p>Enter the address where you want your order delivered.</p>
+                <div class="devzur_inline-group">
+                    <div class="devzur_form-group">
+                        <input type="text" id="devzur_firstName" name="firstName" placeholder="First Name" required>
+                    </div>
+                    <div class="devzur_form-group">
+                        <input type="text" id="devzur_lastName" name="lastName" placeholder="Last Name" required>
+                    </div>
+                </div>
+                <div class="devzur_form-group">
+                    <input type="text" id="devzur_address" name="address" placeholder="Address" required>
+                </div>
+                <div class="devzur_form-group">
+                    <input type="text" id="devzur_apartment" name="apartment" placeholder="Apartment/Suite">
+                </div>
+                <div class="devzur_form-group">
+                    <select id="devzur_country" name="country" required>
+                        <option value="">Select Country</option>
+                        <option value="USA">United States</option>
+                        <option value="CAN">Canada</option>
+                        <option value="UK">United Kingdom</option>
+                        <!-- Add more countries as needed -->
+                    </select>
+                </div>
+                <div class="devzur_form-group">
+                    <input type="text" id="devzur_city" name="city" placeholder="City" required>
+                </div>
+                <div class="devzur_form-group">
+                    <input type="text" id="devzur_postalCode" name="postalCode" placeholder="Postal Code" required>
+                </div>
+    
+                <!-- Shipping Options -->
+                <h3>3. Shipping Options</h3>
+                <div class="devzur_form-group">
+                    <select id="devzur_shippingMethod" name="shippingMethod" required>
+                        <option value="standard">Standard Shipping</option>
+                        <option value="express">Express Shipping</option>
+                        <option value="overnight">Overnight Shipping</option>
+                    </select>
+                </div>
+    
+                <!-- Payment Options -->
+                <h3>4. Payment Options</h3>
+                <div class="devzur_form-group devzur_horizontal-group">
+                    <input type="radio" id="devzur_cod" name="paymentMethod" value="COD" required>
+                    <label for="devzur_cod">Cash on Delivery</label>
+                </div>
+                <div class="devzur_form-group devzur_horizontal-group">
+                    <input type="radio" id="devzur_paypal" name="paymentMethod" value="PayPal" required>
+                    <label for="devzur_paypal">PayPal</label>
+                </div>
+    
+                <!-- Add Note -->
+                <div class="devzur_form-group devzur_horizontal-group">
+                    <input type="checkbox" id="devzur_addNote" name="addNote" onclick="toggleNoteInput(this)">
+                    <label for="devzur_addNote">Add a note to your order</label>
+                </div>
+                <div id="devzur_noteInput" class="devzur_form-group devzur_hidden">
+                    <textarea id="devzur_note" name="note" rows="4" placeholder="Order Note"></textarea>
+                </div>
+    
+                <!-- Submit -->
+                <p><b>By proceeding with your purchase you agree to our Terms and Conditions and Privacy Policy.</b></p>
+                <div class="devzur_form-group">
+                    <input type="submit" value="Submit">
+                </div>
+            </form>
+        </div>
+    
+        <div class="devzur_order-summary">
+            <h3>Order Summary</h3>
+            <div class="devzur_order-sum-details-container">
+                <div class="devzur_order-sum-details">
+                    <img src="Gemini_Generated_Image.jpeg" alt="">
+                    <div class="devzur_item-details">
+                        <p>Beard Oil</p>
+                        <p>$24</p>
+                    </div>
+                </div>
+                <div class="dezvur_total-price">
+                    <p>$24</p>
                 </div>
             </div>
-            <div class="devzur_form-group">
-                <input type="text" id="devzur_address" name="address" placeholder="Address" required>
+            <div class="devzur_subtotal">
+                <p class="devzur_subtotal-p1">Subtotal</p>
+                <p class="devzur_subtotal-p2">$24</p>
             </div>
-            <div class="devzur_form-group">
-                <input type="text" id="devzur_apartment" name="apartment" placeholder="Apartment/Suite">
+            <div class="devzur_shipping">
+                <p class="devzur_shipping-p1">Shipping</p>
+                <p class="devzur_shipping-p2">$0</p>
             </div>
-            <div class="devzur_form-group">
-                <select id="devzur_country" name="country" required>
-                    <option value="">Select Country</option>
-                    <option value="USA">United States</option>
-                    <option value="CAN">Canada</option>
-                    <option value="UK">United Kingdom</option>
-                    <!-- Add more countries as needed -->
-                </select>
+            <div class="devzur_total">
+                <p class="devzur_total-p1">Total</p>
+                <p class="devzur_total-p2">$0</p>
             </div>
-            <div class="devzur_form-group">
-                <input type="text" id="devzur_city" name="city" placeholder="City" required>
-            </div>
-            <div class="devzur_form-group">
-                <input type="text" id="devzur_postalCode" name="postalCode" placeholder="Postal Code" required>
-            </div>
-
-            <!-- Shipping Options -->
-            <h3>3. Shipping Options</h3>
-            <div class="devzur_form-group">
-                <select id="devzur_shippingMethod" name="shippingMethod" required>
-                    <option value="standard">Standard Shipping</option>
-                    <option value="express">Express Shipping</option>
-                    <option value="overnight">Overnight Shipping</option>
-                </select>
-            </div>
-
-            <!-- Payment Options -->
-            <h3>4. Payment Options</h3>
-            <div class="devzur_form-group devzur_horizontal-group">
-                <input type="radio" id="devzur_cod" name="paymentMethod" value="COD" required>
-                <label for="devzur_cod">Cash on Delivery</label>
-            </div>
-            <div class="devzur_form-group devzur_horizontal-group">
-                <input type="radio" id="devzur_paypal" name="paymentMethod" value="PayPal" required>
-                <label for="devzur_paypal">PayPal</label>
-            </div>
-
-            <!-- Add Note -->
-            <div class="devzur_form-group devzur_horizontal-group">
-                <input type="checkbox" id="devzur_addNote" name="addNote" onclick="toggleNoteInput(this)">
-                <label for="devzur_addNote">Add a note to your order</label>
-            </div>
-            <div id="devzur_noteInput" class="devzur_form-group devzur_hidden">
-                <textarea id="devzur_note" name="note" rows="4" placeholder="Order Note"></textarea>
-            </div>
-
-            <!-- Submit -->
-            <p><b>By proceeding with your purchase you agree to our Terms and Conditions and Privacy Policy.</b></p>
-            <div class="devzur_form-group">
-                <input type="submit" value="Submit">
-            </div>
-        </form>
+        </div>
     </div>
-
 
     <script src="script.js"></script>
 
